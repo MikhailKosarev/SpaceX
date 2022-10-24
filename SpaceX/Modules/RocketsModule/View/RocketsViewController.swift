@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RocketsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
