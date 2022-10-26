@@ -33,11 +33,25 @@ class RocketInfoView: UIView {
         return stackView
     }()
     
+    private let rocketSizeCollectionView: UICollectionView = {
+        //setup flow
+        let flow = UICollectionViewFlowLayout()
+        flow.scrollDirection = .horizontal
+        flow.minimumInteritemSpacing = 12
+        flow.itemSize = CGSize(width: 96, height: 96)
+        
+        // setup collectionView
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
+        collectionView.backgroundColor = .none
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setDelegates()
+        setCollectionView()
         setConstraints()
     }
     
@@ -49,17 +63,40 @@ class RocketInfoView: UIView {
     private func setupView() {
         backgroundColor = .black
         addSubview(titleStackView)
-        
+        addSubview(rocketSizeCollectionView)
     }
     
-    private func setDelegates() {
-        
+    private func setCollectionView() {
+        rocketSizeCollectionView.dataSource = self
+        rocketSizeCollectionView.delegate = self
+        rocketSizeCollectionView.register(RocketSizeCollectionViewCell.self, forCellWithReuseIdentifier: RocketSizeCollectionViewCell.reuseID)
     }
     
     @objc private func settingsButtonTapped() {
         print(#function)
     }
 }
+
+extension RocketInfoView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = rocketSizeCollectionView.dequeueReusableCell(withReuseIdentifier:
+                                                                    RocketSizeCollectionViewCell.reuseID,
+                                                                   for: indexPath) as? RocketSizeCollectionViewCell {
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+    }
+}
+
+extension RocketInfoView: UICollectionViewDelegate {
+    
+}
+
 
 // MARK: - setConstraints
 extension RocketInfoView {
@@ -75,6 +112,13 @@ extension RocketInfoView {
         // titleStackView
         titleStackView.snp.makeConstraints { make in
             make.leading.top.trailing.equalTo(layoutMarginsGuide)
+        }
+        
+        rocketSizeCollectionView.snp.makeConstraints { make in
+            make.leading.equalTo(layoutMarginsGuide)
+            make.top.equalTo(titleStackView.snp.bottom).offset(32)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(96)
         }
     }
 }

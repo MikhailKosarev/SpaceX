@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7432DE712908801400C96CFE /* RocketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE702908801400C96CFE /* RocketInfoView.swift */; };
+		7432DE7329096FBB00C96CFE /* RocketSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */; };
 		746396D729047BEB0009A7B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746396D629047BEB0009A7B1 /* AppDelegate.swift */; };
 		746396D929047BEB0009A7B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746396D829047BEB0009A7B1 /* SceneDelegate.swift */; };
 		746396DB29047BEB0009A7B1 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746396DA29047BEB0009A7B1 /* RocketsViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		7432DE702908801400C96CFE /* RocketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoView.swift; sourceTree = "<group>"; };
+		7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		746396D329047BEB0009A7B1 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		746396D629047BEB0009A7B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		746396D829047BEB0009A7B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7432DE7429096FCA00C96CFE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		746396CA29047BEA0009A7B1 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 			children = (
 				746396DA29047BEB0009A7B1 /* RocketsViewController.swift */,
 				7432DE702908801400C96CFE /* RocketInfoView.swift */,
+				7432DE7429096FCA00C96CFE /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				746396DB29047BEB0009A7B1 /* RocketsViewController.swift in Sources */,
+				7432DE7329096FBB00C96CFE /* RocketSizeCollectionViewCell.swift in Sources */,
 				746396D729047BEB0009A7B1 /* AppDelegate.swift in Sources */,
 				7432DE712908801400C96CFE /* RocketInfoView.swift in Sources */,
 				7487B2D929086DF300066FEA /* UIViewController + Preview.swift in Sources */,
