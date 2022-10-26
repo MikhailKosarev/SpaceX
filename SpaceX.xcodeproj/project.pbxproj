@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7432DE712908801400C96CFE /* RocketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE702908801400C96CFE /* RocketInfoView.swift */; };
 		7432DE7329096FBB00C96CFE /* RocketSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */; };
+		7432DE762909ADF700C96CFE /* RocketInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE752909ADF700C96CFE /* RocketInfoTableViewCell.swift */; };
 		746396D729047BEB0009A7B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746396D629047BEB0009A7B1 /* AppDelegate.swift */; };
 		746396D929047BEB0009A7B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746396D829047BEB0009A7B1 /* SceneDelegate.swift */; };
 		746396DB29047BEB0009A7B1 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746396DA29047BEB0009A7B1 /* RocketsViewController.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		7432DE702908801400C96CFE /* RocketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoView.swift; sourceTree = "<group>"; };
 		7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSizeCollectionViewCell.swift; sourceTree = "<group>"; };
+		7432DE752909ADF700C96CFE /* RocketInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoTableViewCell.swift; sourceTree = "<group>"; };
 		746396D329047BEB0009A7B1 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		746396D629047BEB0009A7B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		746396D829047BEB0009A7B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */,
+				7432DE752909ADF700C96CFE /* RocketInfoTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7432DE762909ADF700C96CFE /* RocketInfoTableViewCell.swift in Sources */,
 				746396DB29047BEB0009A7B1 /* RocketsViewController.swift in Sources */,
 				7432DE7329096FBB00C96CFE /* RocketSizeCollectionViewCell.swift in Sources */,
 				746396D729047BEB0009A7B1 /* AppDelegate.swift in Sources */,

@@ -47,11 +47,20 @@ class RocketInfoView: UIView {
         return collectionView
     }()
     
+    private let rocketInfoTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .none
+        tableView.allowsSelection = false
+//        tableView.isScrollEnabled = false
+        return tableView
+    }()
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         setCollectionView()
+        setTableView()
         setConstraints()
     }
     
@@ -64,12 +73,21 @@ class RocketInfoView: UIView {
         backgroundColor = .black
         addSubview(titleStackView)
         addSubview(rocketSizeCollectionView)
+        addSubview(rocketInfoTableView)
     }
     
     private func setCollectionView() {
         rocketSizeCollectionView.dataSource = self
         rocketSizeCollectionView.delegate = self
-        rocketSizeCollectionView.register(RocketSizeCollectionViewCell.self, forCellWithReuseIdentifier: RocketSizeCollectionViewCell.reuseID)
+        rocketSizeCollectionView.register(RocketSizeCollectionViewCell.self,
+                                          forCellWithReuseIdentifier: RocketSizeCollectionViewCell.reuseID)
+    }
+    
+    private func setTableView() {
+        rocketInfoTableView.dataSource = self
+        rocketInfoTableView.delegate = self
+        rocketInfoTableView.register(RocketInfoTableViewCell.self,
+                                     forCellReuseIdentifier: RocketInfoTableViewCell.reuseID)
     }
     
     @objc private func settingsButtonTapped() {
@@ -77,14 +95,16 @@ class RocketInfoView: UIView {
     }
 }
 
+
+// MARK: - UICollectionViewDataSource
 extension RocketInfoView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         4
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = rocketSizeCollectionView.dequeueReusableCell(withReuseIdentifier:
-                                                                    RocketSizeCollectionViewCell.reuseID,
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = rocketSizeCollectionView.dequeueReusableCell(withReuseIdentifier: RocketSizeCollectionViewCell.reuseID,
                                                                    for: indexPath) as? RocketSizeCollectionViewCell {
             return cell
         } else {
@@ -93,10 +113,52 @@ extension RocketInfoView: UICollectionViewDataSource {
     }
 }
 
+
+// MARK: - UICollectionViewDelegate
 extension RocketInfoView: UICollectionViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
+extension RocketInfoView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = rocketInfoTableView.dequeueReusableCell(withIdentifier: RocketInfoTableViewCell.reuseID)
+        else { return UITableViewCell() }
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        3
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+extension RocketInfoView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        40
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        40
+    }
+    
+    // setup Header of tableView
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .black
+        let sectionLabel = UILabel()
+        sectionLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        sectionLabel.textColor = .white
+        sectionLabel.text = "FIRST STAGE"
+        headerView.addSubview(sectionLabel)
+        return sectionLabel
+    }
+}
 
 // MARK: - setConstraints
 extension RocketInfoView {
@@ -114,11 +176,18 @@ extension RocketInfoView {
             make.leading.top.trailing.equalTo(layoutMarginsGuide)
         }
         
+        // rocketSizeCollectionView
         rocketSizeCollectionView.snp.makeConstraints { make in
             make.leading.equalTo(layoutMarginsGuide)
             make.top.equalTo(titleStackView.snp.bottom).offset(32)
             make.trailing.equalToSuperview()
             make.height.equalTo(96)
+        }
+        
+        // rocketInfoTableView
+        rocketInfoTableView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
+            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(40)
         }
     }
 }
