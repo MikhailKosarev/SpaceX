@@ -55,6 +55,17 @@ class RocketInfoView: UIView {
         return tableView
     }()
     
+    private lazy var showLaunchesButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Show launches", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
+        button.backgroundColor = #colorLiteral(red: 0.1726317704, green: 0.1726317704, blue: 0.1726317704, alpha: 1)
+        button.tintColor = .white
+        button.layer.cornerRadius = 16
+        button.addTarget(self, action: #selector(showLaunchedButonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,6 +85,7 @@ class RocketInfoView: UIView {
         addSubview(titleStackView)
         addSubview(rocketSizeCollectionView)
         addSubview(rocketInfoTableView)
+        addSubview(showLaunchesButton)
     }
     
     private func setCollectionView() {
@@ -89,8 +101,16 @@ class RocketInfoView: UIView {
         rocketInfoTableView.register(RocketInfoTableViewCell.self,
                                      forCellReuseIdentifier: RocketInfoTableViewCell.reuseID)
     }
-    
+}
+
+
+// MARK: - Selector methods
+extension RocketInfoView {
     @objc private func settingsButtonTapped() {
+        print(#function)
+    }
+    
+    @objc private func showLaunchedButonTapped() {
         print(#function)
     }
 }
@@ -186,8 +206,15 @@ extension RocketInfoView {
         
         // rocketInfoTableView
         rocketInfoTableView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
+            make.leading.trailing.equalTo(layoutMarginsGuide)
             make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(40)
+        }
+        
+        // showLaunchesButton
+        showLaunchesButton.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
+            make.top.equalTo(rocketInfoTableView.snp.bottom).offset(40)
+            make.height.equalTo(48)
         }
     }
 }
