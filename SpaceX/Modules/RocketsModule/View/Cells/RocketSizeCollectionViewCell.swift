@@ -23,7 +23,7 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = #colorLiteral(red: 0.6250903606, green: 0.6252030134, blue: 0.6286859512, alpha: 1)
+        label.textColor = .specialText9F9FA0
         label.font = .ralewayRegular14()
         label.text = "Height, ft"
         return label
@@ -51,7 +51,7 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private methods
     private func setupView() {
-        backgroundColor = #colorLiteral(red: 0.1726317704, green: 0.1726317704, blue: 0.1726317704, alpha: 1)
+        backgroundColor = .specialBackground212121
         addSubview(sizeStackView)
         layer.cornerRadius = 32
     }

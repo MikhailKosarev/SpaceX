@@ -14,14 +14,14 @@ class RocketInfoView: UIView {
         let label = UILabel()
         label.font = .ralewayRegular24()
         label.text = "Falcon Heavy"
-        label.textColor = .white
+        label.textColor = .specialTextF6F6F6
         return label
     }()
     
     private lazy var settingsButton: UIButton = {
         let button = UIButton(type: .system)
         button.setBackgroundImage(UIImage(systemName: "gearshape"), for: .normal)
-        button.tintColor = .white
+        button.tintColor = .specialTextCACACA
         button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -59,8 +59,7 @@ class RocketInfoView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Show launches", for: .normal)
         button.titleLabel?.font = .ralewaySemiBold16()
-        button.backgroundColor = #colorLiteral(red: 0.1726317704, green: 0.1726317704, blue: 0.1726317704, alpha: 1)
-        button.tintColor = .white
+        button.backgroundColor = .specialBackground212121
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(showLaunchedButonTapped), for: .touchUpInside)
         return button

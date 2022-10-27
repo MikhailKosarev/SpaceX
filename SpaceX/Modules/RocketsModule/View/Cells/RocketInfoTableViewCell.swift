@@ -18,7 +18,7 @@ class RocketInfoTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .ralewayRegular16()
-        label.textColor = .white
+        label.textColor = .specialTextCACACA
         label.text = "First flight"
         
         return label
@@ -27,7 +27,7 @@ class RocketInfoTableViewCell: UITableViewCell {
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = .ralewayRegular16()
-        label.textColor = .white
+        label.textColor = .specialTextF6F6F6
         label.text = "2010-06-04"
         
         return label
