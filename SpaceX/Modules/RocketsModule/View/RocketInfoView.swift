@@ -51,13 +51,15 @@ class RocketInfoView: UIView {
         let tableView = UITableView()
         tableView.backgroundColor = .none
         tableView.allowsSelection = false
-//        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = false
+        tableView.bounces = true
         return tableView
     }()
     
     private lazy var showLaunchesButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Show launches", for: .normal)
+        button.setTitleColor(.specialTextF6F6F6, for: .normal)
         button.titleLabel?.font = .ralewaySemiBold16()
         button.backgroundColor = .specialBackground212121
         button.layer.cornerRadius = 16
@@ -163,19 +165,27 @@ extension RocketInfoView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        40
+        if section > 0 {
+            return 40
+        } else {
+            return 0
+        }
     }
     
     // setup Header of tableView
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .black
-        let sectionLabel = UILabel()
-        sectionLabel.font = .ralewaySemiBold16()
-        sectionLabel.textColor = .white
-        sectionLabel.text = "FIRST STAGE"
-        headerView.addSubview(sectionLabel)
-        return sectionLabel
+        if section > 0 {
+            let headerView = UIView()
+            headerView.backgroundColor = .black
+            let sectionLabel = UILabel()
+            sectionLabel.font = .ralewaySemiBold16()
+            sectionLabel.textColor = .white
+            sectionLabel.text = "FIRST STAGE"
+            headerView.addSubview(sectionLabel)
+            return sectionLabel
+        } else {
+            return nil
+        }
     }
 }
 
@@ -206,7 +216,8 @@ extension RocketInfoView {
         // rocketInfoTableView
         rocketInfoTableView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(layoutMarginsGuide)
-            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(40)
+            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(16)
+            make.height.equalTo(500)
         }
         
         // showLaunchesButton

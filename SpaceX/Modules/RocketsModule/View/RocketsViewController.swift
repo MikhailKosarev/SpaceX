@@ -15,12 +15,18 @@ class RocketsViewController: UIViewController {
         let image = UIImage(named: "mockRocket")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleToFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let rocketInfoView = RocketInfoView()
+    private let rocketInfoView = RocketInfoView()
     
+    private lazy var mainScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.addSubview(rocketImageView)
+        scrollView.addSubview(rocketInfoView)
+        return scrollView
+    }()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -37,19 +43,30 @@ class RocketsViewController: UIViewController {
     // MARK: - Private methods
     private func setupView() {
         view.backgroundColor = .black
-        view.addSubview(rocketImageView)
-        view.addSubview(rocketInfoView)
+        view.addSubview(mainScrollView)
     }
     
     private func setConstraints() {
+        // contentGuide for mainScrollView
+        let contentGuide = mainScrollView.contentLayoutGuide
+        
+        // mainScrollView
+        mainScrollView.snp.makeConstraints { make in
+//            make.leading.top.trailing.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
+            make.width.equalTo(contentGuide.snp.width)
+        }
+        
+        // rocketImageView
         rocketImageView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
+            make.leading.top.trailing.equalTo(contentGuide)
             make.height.equalTo(300)
         }
         
+        // rocketInfoView
         rocketInfoView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalToSuperview().offset(250)
+            make.leading.trailing.bottom.equalTo(contentGuide)
+            make.top.equalTo(mainScrollView).offset(250)
         }
     }
 }
