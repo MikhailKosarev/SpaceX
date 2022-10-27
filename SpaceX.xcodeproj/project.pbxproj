@@ -17,6 +17,7 @@
 		746396E329047BEB0009A7B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746396E129047BEB0009A7B1 /* LaunchScreen.storyboard */; };
 		7487B2D929086DF300066FEA /* UIViewController + Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487B2D829086DF300066FEA /* UIViewController + Preview.swift */; };
 		7487B2E02908714B00066FEA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7487B2DF2908714B00066FEA /* SnapKit */; };
+		74AD3CE0290AA48600785CF0 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CDF290AA48600785CF0 /* UIColor + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		746396E229047BEB0009A7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		746396E429047BEB0009A7B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7487B2D829086DF300066FEA /* UIViewController + Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Preview.swift"; sourceTree = "<group>"; };
+		74AD3CDF290AA48600785CF0 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				7487B2D829086DF300066FEA /* UIViewController + Preview.swift */,
+				74AD3CDF290AA48600785CF0 /* UIColor + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7432DE762909ADF700C96CFE /* RocketInfoTableViewCell.swift in Sources */,
+				74AD3CE0290AA48600785CF0 /* UIColor + Extension.swift in Sources */,
 				746396DB29047BEB0009A7B1 /* RocketsViewController.swift in Sources */,
 				7432DE7329096FBB00C96CFE /* RocketSizeCollectionViewCell.swift in Sources */,
 				746396D729047BEB0009A7B1 /* AppDelegate.swift in Sources */,
