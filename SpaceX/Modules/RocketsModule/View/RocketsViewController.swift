@@ -11,6 +11,15 @@ import SnapKit
 class RocketsViewController: UIViewController {
     
     // MARK: - Declaring UI elesetupViewments
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+        return scrollView
+    }()
+    
+    private let contentView = UIView()
+    
     private let rocketImageView: UIImageView = {
         let image = UIImage(named: "mockRocket")
         let imageView = UIImageView(image: image)
@@ -19,14 +28,6 @@ class RocketsViewController: UIViewController {
     }()
     
     private let rocketInfoView = RocketInfoView()
-    
-    private lazy var mainScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.addSubview(rocketImageView)
-        scrollView.addSubview(rocketInfoView)
-        return scrollView
-    }()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -43,30 +44,31 @@ class RocketsViewController: UIViewController {
     // MARK: - Private methods
     private func setupView() {
         view.backgroundColor = .black
-        view.addSubview(mainScrollView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(rocketImageView)
+        contentView.addSubview(rocketInfoView)
     }
     
     private func setConstraints() {
-        // contentGuide for mainScrollView
-        let contentGuide = mainScrollView.contentLayoutGuide
-        
-        // mainScrollView
-        mainScrollView.snp.makeConstraints { make in
-//            make.leading.top.trailing.bottom.equalToSuperview()
+        // scrollView
+        scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.width.equalTo(contentGuide.snp.width)
         }
-        
+        // contentView
+        contentView.snp.makeConstraints { make in
+            make.edges.width.equalTo(scrollView)
+
+        }
         // rocketImageView
         rocketImageView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalTo(contentGuide)
+            make.leading.top.trailing.equalTo(contentView)
             make.height.equalTo(300)
         }
-        
         // rocketInfoView
         rocketInfoView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(contentGuide)
-            make.top.equalTo(mainScrollView).offset(250)
+            make.leading.trailing.bottom.equalTo(contentView)
+            make.top.equalTo(scrollView).offset(250)
         }
     }
 }
