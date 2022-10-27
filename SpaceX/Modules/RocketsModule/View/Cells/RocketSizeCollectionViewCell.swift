@@ -16,7 +16,7 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.font = .ralewaySemiBold16()
         label.text = "229.6"
         return label
     }()
@@ -24,7 +24,7 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0.6250903606, green: 0.6252030134, blue: 0.6286859512, alpha: 1)
-        label.font = .systemFont(ofSize: 14)
+        label.font = .ralewayRegular14()
         label.text = "Height, ft"
         return label
     }()

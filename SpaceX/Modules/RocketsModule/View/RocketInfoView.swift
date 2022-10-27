@@ -12,7 +12,7 @@ class RocketInfoView: UIView {
     // MARK: - Declare UI elements
     private let rocketNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 24.0)
+        label.font = .ralewayRegular24()
         label.text = "Falcon Heavy"
         label.textColor = .white
         return label
@@ -58,7 +58,7 @@ class RocketInfoView: UIView {
     private lazy var showLaunchesButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Show launches", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
+        button.titleLabel?.font = .ralewaySemiBold16()
         button.backgroundColor = #colorLiteral(red: 0.1726317704, green: 0.1726317704, blue: 0.1726317704, alpha: 1)
         button.tintColor = .white
         button.layer.cornerRadius = 16
@@ -172,7 +172,7 @@ extension RocketInfoView: UITableViewDelegate {
         let headerView = UIView()
         headerView.backgroundColor = .black
         let sectionLabel = UILabel()
-        sectionLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        sectionLabel.font = .ralewaySemiBold16()
         sectionLabel.textColor = .white
         sectionLabel.text = "FIRST STAGE"
         headerView.addSubview(sectionLabel)
