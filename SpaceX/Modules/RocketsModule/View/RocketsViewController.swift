@@ -14,10 +14,11 @@ class RocketsViewController: UIViewController {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.contentInsetAdjustmentBehavior = .never
+        scrollView.contentInsetAdjustmentBehavior = .never  // not for safeArea
         return scrollView
     }()
     
+    // contentView for scrollView
     private let contentView = UIView()
     
     private let rocketImageView: UIImageView = {

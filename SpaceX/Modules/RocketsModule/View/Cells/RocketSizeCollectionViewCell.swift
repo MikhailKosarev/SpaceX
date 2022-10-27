@@ -32,7 +32,6 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     private lazy var sizeStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [valueLabel,
                                                       descriptionLabel])
-//        stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.alignment = .center
         return stackView

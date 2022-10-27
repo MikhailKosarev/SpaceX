@@ -13,7 +13,6 @@ class RocketInfoTableViewCell: UITableViewCell {
     // MARK: - Static properties
     static let reuseID = "RocketInfoTableViewCell"
     
-    
     // MARK: - Declare UI elements
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -38,7 +37,6 @@ class RocketInfoTableViewCell: UITableViewCell {
                                                       valueLabel])
         return stackView
     }()
-    
     
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

@@ -105,6 +105,47 @@ class RocketInfoView: UIView {
 }
 
 
+// MARK: - setConstraints
+extension RocketInfoView {
+    private func setConstraints() {
+        // set custom margins
+        layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
+        
+        // settingsButton
+        settingsButton.snp.makeConstraints { make in
+            make.height.equalTo(settingsButton.snp.width)
+        }
+        
+        // titleStackView
+        titleStackView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalTo(layoutMarginsGuide)
+        }
+        
+        // rocketSizeCollectionView
+        rocketSizeCollectionView.snp.makeConstraints { make in
+            make.leading.equalTo(layoutMarginsGuide)
+            make.top.equalTo(titleStackView.snp.bottom).offset(32)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(96)
+        }
+        
+        // rocketInfoTableView
+        rocketInfoTableView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(layoutMarginsGuide)
+            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(16)
+            make.height.equalTo(500)
+        }
+        
+        // showLaunchesButton
+        showLaunchesButton.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
+            make.top.equalTo(rocketInfoTableView.snp.bottom).offset(40)
+            make.height.equalTo(48)
+        }
+    }
+}
+
+
 // MARK: - Selector methods
 extension RocketInfoView {
     @objc private func settingsButtonTapped() {
@@ -139,6 +180,7 @@ extension RocketInfoView: UICollectionViewDataSource {
 extension RocketInfoView: UICollectionViewDelegate {
     
 }
+
 
 // MARK: - UITableViewDataSource
 extension RocketInfoView: UITableViewDataSource {
@@ -185,46 +227,6 @@ extension RocketInfoView: UITableViewDelegate {
             return sectionLabel
         } else {
             return nil
-        }
-    }
-}
-
-// MARK: - setConstraints
-extension RocketInfoView {
-    private func setConstraints() {
-        // set custom margins
-        layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
-        
-        // settingsButton
-        settingsButton.snp.makeConstraints { make in
-            make.height.equalTo(settingsButton.snp.width)
-        }
-        
-        // titleStackView
-        titleStackView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalTo(layoutMarginsGuide)
-        }
-        
-        // rocketSizeCollectionView
-        rocketSizeCollectionView.snp.makeConstraints { make in
-            make.leading.equalTo(layoutMarginsGuide)
-            make.top.equalTo(titleStackView.snp.bottom).offset(32)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(96)
-        }
-        
-        // rocketInfoTableView
-        rocketInfoTableView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(layoutMarginsGuide)
-            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(16)
-            make.height.equalTo(500)
-        }
-        
-        // showLaunchesButton
-        showLaunchesButton.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
-            make.top.equalTo(rocketInfoTableView.snp.bottom).offset(40)
-            make.height.equalTo(48)
         }
     }
 }
