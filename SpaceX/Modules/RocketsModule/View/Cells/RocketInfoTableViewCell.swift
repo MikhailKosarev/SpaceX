@@ -13,12 +13,11 @@ class RocketInfoTableViewCell: UITableViewCell {
     // MARK: - Static properties
     static let reuseID = "RocketInfoTableViewCell"
     
-    
     // MARK: - Declare UI elements
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .white
+        label.font = .ralewayRegular16()
+        label.textColor = .specialTextCACACA
         label.text = "First flight"
         
         return label
@@ -26,8 +25,8 @@ class RocketInfoTableViewCell: UITableViewCell {
     
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .white
+        label.font = .ralewayRegular16()
+        label.textColor = .specialTextF6F6F6
         label.text = "2010-06-04"
         
         return label
@@ -38,7 +37,6 @@ class RocketInfoTableViewCell: UITableViewCell {
                                                       valueLabel])
         return stackView
     }()
-    
     
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

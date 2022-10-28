@@ -12,16 +12,16 @@ class RocketInfoView: UIView {
     // MARK: - Declare UI elements
     private let rocketNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 24.0)
+        label.font = .ralewayRegular24()
         label.text = "Falcon Heavy"
-        label.textColor = .white
+        label.textColor = .specialTextF6F6F6
         return label
     }()
     
     private lazy var settingsButton: UIButton = {
         let button = UIButton(type: .system)
         button.setBackgroundImage(UIImage(systemName: "gearshape"), for: .normal)
-        button.tintColor = .white
+        button.tintColor = .specialTextCACACA
         button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -51,16 +51,17 @@ class RocketInfoView: UIView {
         let tableView = UITableView()
         tableView.backgroundColor = .none
         tableView.allowsSelection = false
-//        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = false
+        tableView.bounces = true
         return tableView
     }()
     
     private lazy var showLaunchesButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Show launches", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
-        button.backgroundColor = #colorLiteral(red: 0.1726317704, green: 0.1726317704, blue: 0.1726317704, alpha: 1)
-        button.tintColor = .white
+        button.setTitleColor(.specialTextF6F6F6, for: .normal)
+        button.titleLabel?.font = .ralewaySemiBold16()
+        button.backgroundColor = .specialBackground212121
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(showLaunchedButonTapped), for: .touchUpInside)
         return button
@@ -104,6 +105,47 @@ class RocketInfoView: UIView {
 }
 
 
+// MARK: - setConstraints
+extension RocketInfoView {
+    private func setConstraints() {
+        // set custom margins
+        layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
+        
+        // settingsButton
+        settingsButton.snp.makeConstraints { make in
+            make.height.equalTo(settingsButton.snp.width)
+        }
+        
+        // titleStackView
+        titleStackView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalTo(layoutMarginsGuide)
+        }
+        
+        // rocketSizeCollectionView
+        rocketSizeCollectionView.snp.makeConstraints { make in
+            make.leading.equalTo(layoutMarginsGuide)
+            make.top.equalTo(titleStackView.snp.bottom).offset(32)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(96)
+        }
+        
+        // rocketInfoTableView
+        rocketInfoTableView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(layoutMarginsGuide)
+            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(16)
+            make.height.equalTo(500)
+        }
+        
+        // showLaunchesButton
+        showLaunchesButton.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
+            make.top.equalTo(rocketInfoTableView.snp.bottom).offset(40)
+            make.height.equalTo(48)
+        }
+    }
+}
+
+
 // MARK: - Selector methods
 extension RocketInfoView {
     @objc private func settingsButtonTapped() {
@@ -139,6 +181,7 @@ extension RocketInfoView: UICollectionViewDelegate {
     
 }
 
+
 // MARK: - UITableViewDataSource
 extension RocketInfoView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -164,57 +207,26 @@ extension RocketInfoView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        40
+        if section > 0 {
+            return 40
+        } else {
+            return 0
+        }
     }
     
     // setup Header of tableView
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .black
-        let sectionLabel = UILabel()
-        sectionLabel.font = .systemFont(ofSize: 16, weight: .semibold)
-        sectionLabel.textColor = .white
-        sectionLabel.text = "FIRST STAGE"
-        headerView.addSubview(sectionLabel)
-        return sectionLabel
-    }
-}
-
-// MARK: - setConstraints
-extension RocketInfoView {
-    private func setConstraints() {
-        // set custom margins
-        layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
-        
-        // settingsButton
-        settingsButton.snp.makeConstraints { make in
-            make.height.equalTo(settingsButton.snp.width)
-        }
-        
-        // titleStackView
-        titleStackView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalTo(layoutMarginsGuide)
-        }
-        
-        // rocketSizeCollectionView
-        rocketSizeCollectionView.snp.makeConstraints { make in
-            make.leading.equalTo(layoutMarginsGuide)
-            make.top.equalTo(titleStackView.snp.bottom).offset(32)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(96)
-        }
-        
-        // rocketInfoTableView
-        rocketInfoTableView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(layoutMarginsGuide)
-            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(40)
-        }
-        
-        // showLaunchesButton
-        showLaunchesButton.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
-            make.top.equalTo(rocketInfoTableView.snp.bottom).offset(40)
-            make.height.equalTo(48)
+        if section > 0 {
+            let headerView = UIView()
+            headerView.backgroundColor = .black
+            let sectionLabel = UILabel()
+            sectionLabel.font = .ralewaySemiBold16()
+            sectionLabel.textColor = .white
+            sectionLabel.text = "FIRST STAGE"
+            headerView.addSubview(sectionLabel)
+            return sectionLabel
+        } else {
+            return nil
         }
     }
 }

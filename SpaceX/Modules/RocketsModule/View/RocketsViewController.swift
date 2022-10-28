@@ -11,16 +11,24 @@ import SnapKit
 class RocketsViewController: UIViewController {
     
     // MARK: - Declaring UI elesetupViewments
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInsetAdjustmentBehavior = .never  // not for safeArea
+        return scrollView
+    }()
+    
+    // contentView for scrollView
+    private let contentView = UIView()
+    
     private let rocketImageView: UIImageView = {
         let image = UIImage(named: "mockRocket")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleToFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let rocketInfoView = RocketInfoView()
-    
+    private let rocketInfoView = RocketInfoView()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -37,19 +45,31 @@ class RocketsViewController: UIViewController {
     // MARK: - Private methods
     private func setupView() {
         view.backgroundColor = .black
-        view.addSubview(rocketImageView)
-        view.addSubview(rocketInfoView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(rocketImageView)
+        contentView.addSubview(rocketInfoView)
     }
     
     private func setConstraints() {
+        // scrollView
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        // contentView
+        contentView.snp.makeConstraints { make in
+            make.edges.width.equalTo(scrollView)
+
+        }
+        // rocketImageView
         rocketImageView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
+            make.leading.top.trailing.equalTo(contentView)
             make.height.equalTo(300)
         }
-        
+        // rocketInfoView
         rocketInfoView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalToSuperview().offset(250)
+            make.leading.trailing.bottom.equalTo(contentView)
+            make.top.equalTo(scrollView).offset(250)
         }
     }
 }
