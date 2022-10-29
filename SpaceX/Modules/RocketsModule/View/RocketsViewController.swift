@@ -10,7 +10,7 @@ import SnapKit
 
 class RocketsViewController: UIViewController {
     
-    // MARK: - Declaring UI elesetupViewments
+    // MARK: - Declaring UI elements
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
@@ -34,6 +34,7 @@ class RocketsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setDelegates()
         setConstraints()
     }
     
@@ -49,6 +50,10 @@ class RocketsViewController: UIViewController {
         scrollView.addSubview(contentView)
         contentView.addSubview(rocketImageView)
         contentView.addSubview(rocketInfoView)
+    }
+    
+    private func setDelegates() {
+        rocketInfoView.delegate = self
     }
     
     private func setConstraints() {
@@ -71,6 +76,16 @@ class RocketsViewController: UIViewController {
             make.leading.trailing.bottom.equalTo(contentView)
             make.top.equalTo(scrollView).offset(250)
         }
+    }
+}
+
+
+// MARK: - RocketInfoViewDelegate
+extension RocketsViewController: RocketInfoViewDelegate {
+    func settingsButtonTapped() {
+        let settingsViewController = SettingsViewController()
+        settingsViewController.modalPresentationStyle = .pageSheet
+        present(settingsViewController, animated: true)
     }
 }
 
