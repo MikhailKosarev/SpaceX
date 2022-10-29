@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RocketInfoViewDelegate: AnyObject {
+    func settingsButtonTapped()
+}
+
 class RocketInfoView: UIView {
     
     // MARK: - Declare UI elements
@@ -66,6 +70,9 @@ class RocketInfoView: UIView {
         button.addTarget(self, action: #selector(showLaunchedButonTapped), for: .touchUpInside)
         return button
     }()
+    
+    // MARK: - Public properties
+    weak var delegate: RocketInfoViewDelegate?
     
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -149,6 +156,7 @@ extension RocketInfoView {
 // MARK: - Selector methods
 extension RocketInfoView {
     @objc private func settingsButtonTapped() {
+        delegate?.settingsButtonTapped()
         print(#function)
     }
     
