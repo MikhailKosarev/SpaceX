@@ -15,6 +15,8 @@
 		746396DB29047BEB0009A7B1 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746396DA29047BEB0009A7B1 /* RocketsViewController.swift */; };
 		746396E029047BEB0009A7B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 746396DF29047BEB0009A7B1 /* Assets.xcassets */; };
 		746396E329047BEB0009A7B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746396E129047BEB0009A7B1 /* LaunchScreen.storyboard */; };
+		74827518290F0A4F00857B53 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74827517290F0A4F00857B53 /* LaunchesViewController.swift */; };
+		7482751B290F0E4F00857B53 /* LaunchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482751A290F0E4F00857B53 /* LaunchesTableViewCell.swift */; };
 		7487B2D929086DF300066FEA /* UIViewController + Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487B2D829086DF300066FEA /* UIViewController + Preview.swift */; };
 		7487B2E02908714B00066FEA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7487B2DF2908714B00066FEA /* SnapKit */; };
 		74AD3CE0290AA48600785CF0 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CDF290AA48600785CF0 /* UIColor + Extension.swift */; };
@@ -52,6 +54,8 @@
 		746396DF29047BEB0009A7B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		746396E229047BEB0009A7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		746396E429047BEB0009A7B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74827517290F0A4F00857B53 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		7482751A290F0E4F00857B53 /* LaunchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTableViewCell.swift; sourceTree = "<group>"; };
 		7487B2D829086DF300066FEA /* UIViewController + Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Preview.swift"; sourceTree = "<group>"; };
 		74AD3CDF290AA48600785CF0 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		74AD3CE2290AAE0A00785CF0 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
@@ -112,6 +116,14 @@
 				7487B2BB2906CA8700066FEA /* Resources */,
 			);
 			path = SpaceX;
+			sourceTree = "<group>";
+		};
+		74827519290F0E2D00857B53 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7482751A290F0E4F00857B53 /* LaunchesTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7487B2BA2906CA7D00066FEA /* App */ = {
@@ -208,6 +220,8 @@
 		7487B2C42906CC5D00066FEA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				74827517290F0A4F00857B53 /* LaunchesViewController.swift */,
+				74827519290F0E2D00857B53 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,11 +375,13 @@
 			files = (
 				74AD3CEB290AAEBC00785CF0 /* UIFont + Extension.swift in Sources */,
 				74AD3CEF290DB58800785CF0 /* UILabel + Extensions.swift in Sources */,
+				7482751B290F0E4F00857B53 /* LaunchesTableViewCell.swift in Sources */,
 				7432DE762909ADF700C96CFE /* RocketInfoTableViewCell.swift in Sources */,
 				74AD3CE0290AA48600785CF0 /* UIColor + Extension.swift in Sources */,
 				74AD3CED290DB3A500785CF0 /* SettingsViewController.swift in Sources */,
 				746396DB29047BEB0009A7B1 /* RocketsViewController.swift in Sources */,
 				74AD3CF1290DB9A500785CF0 /* UISegmentedControl + Extension.swift in Sources */,
+				74827518290F0A4F00857B53 /* LaunchesViewController.swift in Sources */,
 				7432DE7329096FBB00C96CFE /* RocketSizeCollectionViewCell.swift in Sources */,
 				746396D729047BEB0009A7B1 /* AppDelegate.swift in Sources */,
 				7432DE712908801400C96CFE /* RocketInfoView.swift in Sources */,
