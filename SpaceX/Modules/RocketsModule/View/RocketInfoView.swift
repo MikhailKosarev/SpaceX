@@ -9,6 +9,7 @@ import UIKit
 
 protocol RocketInfoViewDelegate: AnyObject {
     func settingsButtonTapped()
+    func showLaunchedButtonTapped()
 }
 
 class RocketInfoView: UIView {
@@ -67,7 +68,7 @@ class RocketInfoView: UIView {
         button.titleLabel?.font = .ralewaySemiBold16()
         button.backgroundColor = .specialBackground212121
         button.layer.cornerRadius = 16
-        button.addTarget(self, action: #selector(showLaunchedButonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showLaunchedButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -78,8 +79,8 @@ class RocketInfoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setCollectionView()
-        setTableView()
+        setupCollectionView()
+        setupTableView()
         setConstraints()
     }
     
@@ -96,14 +97,14 @@ class RocketInfoView: UIView {
         addSubview(showLaunchesButton)
     }
     
-    private func setCollectionView() {
+    private func setupCollectionView() {
         rocketSizeCollectionView.dataSource = self
         rocketSizeCollectionView.delegate = self
         rocketSizeCollectionView.register(RocketSizeCollectionViewCell.self,
                                           forCellWithReuseIdentifier: RocketSizeCollectionViewCell.reuseID)
     }
     
-    private func setTableView() {
+    private func setupTableView() {
         rocketInfoTableView.dataSource = self
         rocketInfoTableView.delegate = self
         rocketInfoTableView.register(RocketInfoTableViewCell.self,
@@ -160,7 +161,8 @@ extension RocketInfoView {
         print(#function)
     }
     
-    @objc private func showLaunchedButonTapped() {
+    @objc private func showLaunchedButtonTapped() {
+        delegate?.showLaunchedButtonTapped()
         print(#function)
     }
 }
@@ -197,8 +199,7 @@ extension RocketInfoView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = rocketInfoTableView.dequeueReusableCell(withIdentifier: RocketInfoTableViewCell.reuseID)
-        else { return UITableViewCell() }
+        let cell = rocketInfoTableView.dequeueReusableCell(withIdentifier: RocketInfoTableViewCell.reuseID, for: indexPath)
         return cell
     }
     
