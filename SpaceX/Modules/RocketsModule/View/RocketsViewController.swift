@@ -43,6 +43,16 @@ class RocketsViewController: UIViewController {
         rocketInfoView.layer.cornerRadius = 32
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     // MARK: - Private methods
     private func setupView() {
         view.backgroundColor = .black
@@ -55,7 +65,7 @@ class RocketsViewController: UIViewController {
     private func setDelegates() {
         rocketInfoView.delegate = self
     }
-    
+
     private func setConstraints() {
         // scrollView
         scrollView.snp.makeConstraints { make in
