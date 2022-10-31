@@ -91,7 +91,9 @@ extension RocketsViewController: RocketInfoViewDelegate {
     func showLaunchedButtonTapped() {
         let launchesViewController = LaunchesViewController()
         launchesViewController.modalPresentationStyle = .pageSheet
-        present(launchesViewController, animated: true)
+//        present(launchesViewController, animated: true)
+        
+        navigationController?.pushViewController(launchesViewController, animated: true)
     }
 }
 

@@ -33,7 +33,7 @@ class LaunchesViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .black
         view.addSubview(launchesTableView)
-
+        title = "Falcon heavy"
     }
     
     private func setupLaunchesTableView() {
