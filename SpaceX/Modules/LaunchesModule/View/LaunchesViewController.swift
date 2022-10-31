@@ -26,6 +26,7 @@ class LaunchesViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupLaunchesTableView()
+        setupNavigationBar()
         setConstraints()
     }
     
@@ -33,7 +34,23 @@ class LaunchesViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .black
         view.addSubview(launchesTableView)
+        title = "Falcon Heavy"
+    }
+    
+    private func setupNavigationBar() {
+        // setup navigation bar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .clear
+        appearance.shadowColor = .clear
+                
+        // setup navigation bar title appearance
+        appearance.titleTextAttributes = [.font: UIFont.ralewayRegular16() ?? UIFont.systemFont(ofSize: 16),
+                                          .foregroundColor: UIColor.specialTextF6F6F6]
 
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = UIColor.specialTextF6F6F6
     }
     
     private func setupLaunchesTableView() {
