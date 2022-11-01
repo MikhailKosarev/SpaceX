@@ -28,6 +28,7 @@
 		74AD3CED290DB3A500785CF0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CEC290DB3A500785CF0 /* SettingsViewController.swift */; };
 		74AD3CEF290DB58800785CF0 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CEE290DB58800785CF0 /* UILabel + Extensions.swift */; };
 		74AD3CF1290DB9A500785CF0 /* UISegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CF0290DB9A500785CF0 /* UISegmentedControl + Extension.swift */; };
+		74D83C292911BAF700471BE2 /* RocketsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D83C282911BAF700471BE2 /* RocketsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +67,7 @@
 		74AD3CEC290DB3A500785CF0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		74AD3CEE290DB58800785CF0 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		74AD3CF0290DB9A500785CF0 /* UISegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl + Extension.swift"; sourceTree = "<group>"; };
+		74D83C282911BAF700471BE2 /* RocketsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		7487B2BC2906CAA700066FEA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				74D83C272911BACA00471BE2 /* RocketsPageViewController */,
 				7487B2BD2906CBD600066FEA /* RocketsModule */,
 				7487B2BE2906CBF400066FEA /* LaunchesModule */,
 				7487B2BF2906CBFE00066FEA /* SettingsModule */,
@@ -292,6 +295,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		74D83C272911BACA00471BE2 /* RocketsPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74D83C282911BAF700471BE2 /* RocketsPageViewController.swift */,
+			);
+			path = RocketsPageViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D83C292911BAF700471BE2 /* RocketsPageViewController.swift in Sources */,
 				74AD3CEB290AAEBC00785CF0 /* UIFont + Extension.swift in Sources */,
 				74AD3CEF290DB58800785CF0 /* UILabel + Extensions.swift in Sources */,
 				7482751B290F0E4F00857B53 /* LaunchesTableViewCell.swift in Sources */,
