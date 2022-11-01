@@ -18,7 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = RocketsViewController()
 //        window?.makeKeyAndVisible()
         
-        let navigationViewController = UINavigationController(rootViewController: RocketsViewController())
+//        let navigationViewController = UINavigationController(rootViewController: RocketsViewController())
+//        window?.rootViewController = navigationViewController
+        
+        let navigationViewController = UINavigationController(rootViewController: RocketsPageViewController())
         window?.rootViewController = navigationViewController
         window?.makeKeyAndVisible()
     }
