@@ -14,7 +14,8 @@ class RocketsPageViewController: UIPageViewController {
         let firstRocket = RocketsViewController()
         let secondRocket = RocketsViewController()
         let thirdRocket = RocketsViewController()
-        return [firstRocket, secondRocket, thirdRocket]
+        let fourtRocket = RocketsViewController()
+        return [firstRocket, secondRocket, thirdRocket, fourtRocket]
     }()
     
     // MARK: - Initialization
