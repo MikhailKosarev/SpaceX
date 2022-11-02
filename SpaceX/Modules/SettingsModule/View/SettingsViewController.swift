@@ -10,7 +10,9 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     // MARK: - Declare UI elements
-    private let titleLabel = UILabel.makeRegular16(text: "Settings")
+    private let titleLabel = UILabel.makeLabel(text: "Settings",
+                                               font: .ralewayRegular16(),
+                                               color: .specialTextF6F6F6)
     
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -21,23 +23,30 @@ class SettingsViewController: UIViewController {
         return button
     }()
     
-    private let heightLabel = UILabel.makeRegular16(text: "Height")
+    private let heightLabel = UILabel.makeLabel(text: "Height",
+                                                font: .ralewayRegular16(),
+                                                color: .specialTextF6F6F6)
     private lazy var heightSegmentedControl = UISegmentedControl.makeSettings(items: ["m", "ft"])
-
     private lazy var heightStackView = UIStackView(arrangedSubviews: [heightLabel,
                                                                      heightSegmentedControl])
     
-    private let diameterLabel = UILabel.makeRegular16(text: "Diameter")
+    private let diameterLabel = UILabel.makeLabel(text: "Diameter",
+                                                  font: .ralewayRegular16(),
+                                                  color: .specialTextF6F6F6)
     private lazy var diameterSegmentedControl = UISegmentedControl.makeSettings(items: ["m", "ft"])
     private lazy var diameterStackView = UIStackView(arrangedSubviews: [diameterLabel,
                                                                         diameterSegmentedControl])
     
-    private let massLabel = UILabel.makeRegular16(text: "Mass")
+    private let massLabel = UILabel.makeLabel(text: "Mass",
+                                              font: .ralewayRegular16(),
+                                              color: .specialTextF6F6F6)
     private lazy var massSegmentedControl = UISegmentedControl.makeSettings(items: ["kg", "lb"])
     private lazy var massStackView = UIStackView(arrangedSubviews: [massLabel,
                                                                     massSegmentedControl])
     
-    private let payloadWeightsLabel = UILabel.makeRegular16(text: "Payload weights")
+    private let payloadWeightsLabel = UILabel.makeLabel(text: "Payload weights",
+                                                        font: .ralewayRegular16(),
+                                                        color: .specialTextF6F6F6)
     private lazy var payloadWeightsSegmentedControl = UISegmentedControl.makeSettings(items: ["kg", "lb"])
     private lazy var payloadWeightsStackView = UIStackView(arrangedSubviews: [payloadWeightsLabel,
                                                                               payloadWeightsSegmentedControl])

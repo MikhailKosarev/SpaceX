@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol RocketInfoViewDelegate: AnyObject {
     func settingsButtonTapped()
@@ -15,13 +16,9 @@ protocol RocketInfoViewDelegate: AnyObject {
 class RocketInfoView: UIView {
     
     // MARK: - Declare UI elements
-    private let rocketNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .ralewayRegular24()
-        label.text = "Falcon Heavy"
-        label.textColor = .specialTextF6F6F6
-        return label
-    }()
+    private let rocketNameLabel = UILabel.makeLabel(text: "First flight",
+                                                    font: .ralewayRegular24(),
+                                                    color: .specialTextF6F6F6)
     
     private lazy var settingsButton: UIButton = {
         let button = UIButton(type: .system)

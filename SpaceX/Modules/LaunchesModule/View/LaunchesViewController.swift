@@ -11,7 +11,9 @@ import SnapKit
 class LaunchesViewController: UIViewController {
     
     // MARK: - Declare UI elements
-    private let titleLabel = UILabel.makeRegular16(text: "Falcon Heavy")
+    private let titleLabel = UILabel.makeLabel(text: "Falcon Heavy",
+                                               font: .ralewayRegular16(),
+                                               color: .specialTextF6F6F6)
     
     private let launchesTableView: UITableView = {
         let tableView = UITableView()

@@ -14,29 +14,14 @@ class LaunchesTableViewCell: UITableViewCell {
     static let reuseID = "LaunchesTableViewCell"
     
     // MARK: - Declare UI elements
-//    private let contentView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .green
-//        return view
-//    }()
+    private let nameLabel = UILabel.makeLabel(text: "FalconSat",
+                                              font: .ralewayRegular20(),
+                                              color: .white)
     
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .ralewayRegular20()
-        label.textColor = .white
-        label.textAlignment = .left
-        label.text = "FalconSat"
-        return label
-    }()
-    
-    private let dateLabel: UILabel = {
-        let label = UILabel()
-        label.font = .ralewayRegular16()
-        label.textColor = .specialText8E8E8F
-        label.textAlignment = .left
-        label.text = "24 March 2006"
-        return label
-    }()
+    private let dateLabel  = UILabel.makeLabel(text: "24 March 2006",
+                                               font: .ralewayRegular16(),
+                                               color: .specialText8E8E8F,
+                                               alignment: .left)
     
     private lazy var descriptionStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel,

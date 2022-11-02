@@ -13,21 +13,13 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     static let reuseID = "RocketSizeCollectionViewCell"
     
     // MARK: - Declare UI elements
-    private let valueLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .ralewaySemiBold16()
-        label.text = "229.6"
-        return label
-    }()
+    private let valueLabel = UILabel.makeLabel(text: "229.6",
+                                               font: .ralewaySemiBold16(),
+                                               color: .white)
     
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .specialText9F9FA0
-        label.font = .ralewayRegular14()
-        label.text = "Height, ft"
-        return label
-    }()
+    private let descriptionLabel = UILabel.makeLabel(text: "Height, ft",
+                                                      font: .ralewayRegular14(),
+                                                      color: .specialText9F9FA0)
     
     private lazy var sizeStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [valueLabel,

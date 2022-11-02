@@ -8,11 +8,15 @@
 import UIKit
 
 extension UILabel {
-    static func makeRegular16(text: String = "") -> UILabel {
+    static func makeLabel(text: String = "",
+                          font: UIFont?,
+                          color: UIColor,
+                          alignment: NSTextAlignment = .center) -> UILabel {
         let label = UILabel()
-        label.font = .ralewayRegular16()
+        label.font = font
         label.text = text
-        label.textColor = .specialTextF6F6F6
+        label.textColor = color
+        label.textAlignment = alignment
         return label
     }
 }
