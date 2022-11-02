@@ -14,23 +14,13 @@ class RocketInfoTableViewCell: UITableViewCell {
     static let reuseID = "RocketInfoTableViewCell"
     
     // MARK: - Declare UI elements
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .ralewayRegular16()
-        label.textColor = .specialTextCACACA
-        label.text = "First flight"
-        
-        return label
-    }()
+    private let titleLabel = UILabel.makeLabel(text: "First flight",
+                                               font: .ralewayRegular16(),
+                                               color: .specialTextCACACA)
     
-    private let valueLabel: UILabel = {
-        let label = UILabel()
-        label.font = .ralewayRegular16()
-        label.textColor = .specialTextF6F6F6
-        label.text = "2010-06-04"
-        
-        return label
-    }()
+    private let valueLabel = UILabel.makeLabel(text: "2010-06-04",
+                                               font: .ralewayRegular16(),
+                                               color: .specialTextF6F6F6)
     
     private lazy var infoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel,
