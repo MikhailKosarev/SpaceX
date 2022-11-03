@@ -39,8 +39,13 @@ class LaunchesTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var launchStackView = UIStackView(arrangedSubviews: [descriptionStackView,
-                                                                     launchResultImageView])
+    private lazy var launchStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [descriptionStackView,
+                                                       launchResultImageView])
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .center
+        return stackView
+    }()
     
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -54,7 +59,6 @@ class LaunchesTableViewCell: UITableViewCell {
     }
 
     
-    
     // MARK: - Private methods
     private func setupView() {
         backgroundColor = .specialBackground212121
@@ -67,7 +71,7 @@ class LaunchesTableViewCell: UITableViewCell {
         
         // launchResultImageView
         launchResultImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(32)
+            make.width.equalTo(32)
         }
         
         // launchStackView
@@ -75,5 +79,4 @@ class LaunchesTableViewCell: UITableViewCell {
             make.edges.equalTo(contentView.layoutMarginsGuide)
         }
     }
-    
 }
