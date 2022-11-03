@@ -52,6 +52,9 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
         layoutMargins = UIEdgeInsets(top: 28, left: 8, bottom: 24, right: 8)
         
         // set constraints
+        // set contentHuggingPriority to fix ambiguous height
+        valueLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        
         sizeStackView.snp.makeConstraints { make in
             make.leading.top.trailing.bottom.equalTo(layoutMarginsGuide)
         }

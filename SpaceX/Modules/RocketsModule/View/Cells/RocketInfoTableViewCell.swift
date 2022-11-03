@@ -47,6 +47,9 @@ class RocketInfoTableViewCell: UITableViewCell {
     }
     
     private func setConstraints() {
+        // set contentHuggingPriority to fix ambiguous width
+        valueLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
         infoStackView.snp.makeConstraints { make in
             make.leading.top.trailing.bottom.equalToSuperview()
         }
