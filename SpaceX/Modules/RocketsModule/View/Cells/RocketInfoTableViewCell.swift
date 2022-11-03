@@ -16,7 +16,8 @@ class RocketInfoTableViewCell: UITableViewCell {
     // MARK: - Declare UI elements
     private let titleLabel = UILabel.makeLabel(text: "First flight",
                                                font: .ralewayRegular16(),
-                                               color: .specialTextCACACA)
+                                               color: .specialTextCACACA,
+                                               alignment: .left)
     
     private let valueLabel = UILabel.makeLabel(text: "2010-06-04",
                                                font: .ralewayRegular16(),

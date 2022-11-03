@@ -16,7 +16,8 @@ class LaunchesTableViewCell: UITableViewCell {
     // MARK: - Declare UI elements
     private let nameLabel = UILabel.makeLabel(text: "FalconSat",
                                               font: .ralewayRegular20(),
-                                              color: .white)
+                                              color: .white,
+                                              alignment: .left)
     
     private let dateLabel  = UILabel.makeLabel(text: "24 March 2006",
                                                font: .ralewayRegular16(),

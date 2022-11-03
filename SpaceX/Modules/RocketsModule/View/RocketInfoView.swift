@@ -16,7 +16,7 @@ protocol RocketInfoViewDelegate: AnyObject {
 class RocketInfoView: UIView {
     
     // MARK: - Declare UI elements
-    private let rocketNameLabel = UILabel.makeLabel(text: "First flight",
+    private let rocketNameLabel = UILabel.makeLabel(text: "Falcon Heavy",
                                                     font: .ralewayRegular24(),
                                                     color: .specialTextF6F6F6)
     
