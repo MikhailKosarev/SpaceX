@@ -16,7 +16,8 @@ class RocketInfoTableViewCell: UITableViewCell {
     // MARK: - Declare UI elements
     private let titleLabel = UILabel.makeLabel(text: "First flight",
                                                font: .ralewayRegular16(),
-                                               color: .specialTextCACACA)
+                                               color: .specialTextCACACA,
+                                               alignment: .left)
     
     private let valueLabel = UILabel.makeLabel(text: "2010-06-04",
                                                font: .ralewayRegular16(),
@@ -46,6 +47,9 @@ class RocketInfoTableViewCell: UITableViewCell {
     }
     
     private func setConstraints() {
+        // set contentHuggingPriority to fix ambiguous width
+        valueLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
         infoStackView.snp.makeConstraints { make in
             make.leading.top.trailing.bottom.equalToSuperview()
         }

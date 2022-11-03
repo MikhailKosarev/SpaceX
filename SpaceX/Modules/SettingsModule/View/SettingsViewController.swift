@@ -25,28 +25,32 @@ class SettingsViewController: UIViewController {
     
     private let heightLabel = UILabel.makeLabel(text: "Height",
                                                 font: .ralewayRegular16(),
-                                                color: .specialTextF6F6F6)
+                                                color: .specialTextF6F6F6,
+                                                alignment: .left)
     private lazy var heightSegmentedControl = UISegmentedControl.makeSettings(items: ["m", "ft"])
     private lazy var heightStackView = UIStackView(arrangedSubviews: [heightLabel,
                                                                      heightSegmentedControl])
     
     private let diameterLabel = UILabel.makeLabel(text: "Diameter",
                                                   font: .ralewayRegular16(),
-                                                  color: .specialTextF6F6F6)
+                                                  color: .specialTextF6F6F6,
+                                                  alignment: .left)
     private lazy var diameterSegmentedControl = UISegmentedControl.makeSettings(items: ["m", "ft"])
     private lazy var diameterStackView = UIStackView(arrangedSubviews: [diameterLabel,
                                                                         diameterSegmentedControl])
     
     private let massLabel = UILabel.makeLabel(text: "Mass",
                                               font: .ralewayRegular16(),
-                                              color: .specialTextF6F6F6)
+                                              color: .specialTextF6F6F6,
+                                              alignment: .left)
     private lazy var massSegmentedControl = UISegmentedControl.makeSettings(items: ["kg", "lb"])
     private lazy var massStackView = UIStackView(arrangedSubviews: [massLabel,
                                                                     massSegmentedControl])
     
     private let payloadWeightsLabel = UILabel.makeLabel(text: "Payload weights",
                                                         font: .ralewayRegular16(),
-                                                        color: .specialTextF6F6F6)
+                                                        color: .specialTextF6F6F6,
+                                                        alignment: .left)
     private lazy var payloadWeightsSegmentedControl = UISegmentedControl.makeSettings(items: ["kg", "lb"])
     private lazy var payloadWeightsStackView = UIStackView(arrangedSubviews: [payloadWeightsLabel,
                                                                               payloadWeightsSegmentedControl])
