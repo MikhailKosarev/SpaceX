@@ -28,12 +28,8 @@ class RocketInfoView: UIView {
         return button
     }()
     
-    private lazy var titleStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [rocketNameLabel,
-                                                       settingsButton])
-        stackView.distribution = .fill
-        return stackView
-    }()
+    private lazy var titleStackView = UIStackView(arrangedSubviews: [rocketNameLabel,
+                                                                     settingsButton])
     
     private let rocketSizeCollectionView: UICollectionView = {
         //setup flow

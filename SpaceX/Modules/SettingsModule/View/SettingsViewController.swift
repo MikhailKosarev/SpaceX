@@ -55,15 +55,12 @@ class SettingsViewController: UIViewController {
     private lazy var payloadWeightsStackView = UIStackView(arrangedSubviews: [payloadWeightsLabel,
                                                                               payloadWeightsSegmentedControl])
     
-    private lazy var settingsStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [heightStackView,
-                                                       diameterStackView,
-                                                       massStackView,
-                                                       payloadWeightsStackView])
-        stackView.axis = .vertical
-        stackView.spacing = 24
-        return stackView
-    }()
+    private lazy var settingsStackView = UIStackView(arrangedSubviews: [heightStackView,
+                                                                        diameterStackView,
+                                                                        massStackView,
+                                                                        payloadWeightsStackView],
+                                                     axis: .vertical,
+                                                     spacing: 24.0)
     
     // MARK: - Life cycle
     override func viewDidLoad() {

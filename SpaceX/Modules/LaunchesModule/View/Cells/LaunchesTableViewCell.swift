@@ -24,13 +24,10 @@ class LaunchesTableViewCell: UITableViewCell {
                                                color: .specialText8E8E8F,
                                                alignment: .left)
     
-    private lazy var descriptionStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [nameLabel,
-                                                       dateLabel])
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        return stackView
-    }()
+    private lazy var descriptionStackView = UIStackView(arrangedSubviews: [nameLabel,
+                                                                           dateLabel],
+                                                        axis: .vertical,
+                                                        distribution: .fillEqually)
     
     private let launchResultImageView: UIImageView = {
         let image = UIImage(named: "successLaunch")
@@ -39,13 +36,10 @@ class LaunchesTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var launchStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [descriptionStackView,
-                                                       launchResultImageView])
-        stackView.distribution = .fillProportionally
-        stackView.alignment = .center
-        return stackView
-    }()
+    private lazy var launchStackView = UIStackView(arrangedSubviews: [descriptionStackView,
+                                                                      launchResultImageView],
+                                                   distribution: .fillProportionally,
+                                                   alignment: .center)
     
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

@@ -21,13 +21,11 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
                                                       font: .ralewayRegular14(),
                                                       color: .specialText9F9FA0)
     
-    private lazy var sizeStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [valueLabel,
-                                                      descriptionLabel])
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        return stackView
-    }()
+    private lazy var sizeStackView = UIStackView(arrangedSubviews: [valueLabel,
+                                                                    descriptionLabel],
+                                                 axis: .vertical,
+                                                 alignment: .center)
+    
     
     // MARK: - Initialization
     override init(frame: CGRect) {

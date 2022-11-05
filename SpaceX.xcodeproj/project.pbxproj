@@ -28,6 +28,7 @@
 		74AD3CED290DB3A500785CF0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CEC290DB3A500785CF0 /* SettingsViewController.swift */; };
 		74AD3CEF290DB58800785CF0 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CEE290DB58800785CF0 /* UILabel + Extensions.swift */; };
 		74AD3CF1290DB9A500785CF0 /* UISegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AD3CF0290DB9A500785CF0 /* UISegmentedControl + Extension.swift */; };
+		74B640C32916D90E00EB06D0 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B640C22916D90E00EB06D0 /* UIStackView + Extension.swift */; };
 		74D83C292911BAF700471BE2 /* RocketsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D83C282911BAF700471BE2 /* RocketsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		74AD3CEC290DB3A500785CF0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		74AD3CEE290DB58800785CF0 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		74AD3CF0290DB9A500785CF0 /* UISegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl + Extension.swift"; sourceTree = "<group>"; };
+		74B640C22916D90E00EB06D0 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		74D83C282911BAF700471BE2 /* RocketsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +275,7 @@
 				74AD3CEA290AAEBC00785CF0 /* UIFont + Extension.swift */,
 				74AD3CEE290DB58800785CF0 /* UILabel + Extensions.swift */,
 				74AD3CF0290DB9A500785CF0 /* UISegmentedControl + Extension.swift */,
+				74B640C22916D90E00EB06D0 /* UIStackView + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				7432DE712908801400C96CFE /* RocketInfoView.swift in Sources */,
 				7487B2D929086DF300066FEA /* UIViewController + Preview.swift in Sources */,
 				746396D929047BEB0009A7B1 /* SceneDelegate.swift in Sources */,
+				74B640C32916D90E00EB06D0 /* UIStackView + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
