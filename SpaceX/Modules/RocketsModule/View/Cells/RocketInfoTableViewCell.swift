@@ -23,11 +23,8 @@ class RocketInfoTableViewCell: UITableViewCell {
                                                font: .ralewayRegular16(),
                                                color: .specialTextF6F6F6)
     
-    private lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel,
-                                                      valueLabel])
-        return stackView
-    }()
+    private lazy var infoStackView = UIStackView(arrangedSubviews: [titleLabel,
+                                                                    valueLabel])
     
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
