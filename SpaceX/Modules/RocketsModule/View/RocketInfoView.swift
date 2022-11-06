@@ -40,6 +40,7 @@ class RocketInfoView: UIView {
         
         // setup collectionView
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
+        collectionView.contentInset = .init(top: 0, left: 32, bottom: 0, right: 32)
         collectionView.backgroundColor = .none
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -124,9 +125,8 @@ extension RocketInfoView {
         
         // rocketSizeCollectionView
         rocketSizeCollectionView.snp.makeConstraints { make in
-            make.leading.equalTo(layoutMarginsGuide)
+            make.leading.trailing.equalToSuperview()
             make.top.equalTo(titleStackView.snp.bottom).offset(32)
-            make.trailing.equalToSuperview()
             make.height.equalTo(96)
         }
         
