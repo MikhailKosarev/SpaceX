@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController {
         return button
     }()
     
+    // height
     private let heightLabel = UILabel.makeLabel(text: "Height",
                                                 font: .ralewayRegular16(),
                                                 color: .specialTextF6F6F6,
@@ -31,6 +32,7 @@ class SettingsViewController: UIViewController {
     private lazy var heightStackView = UIStackView(arrangedSubviews: [heightLabel,
                                                                      heightSegmentedControl])
     
+    // diameter
     private let diameterLabel = UILabel.makeLabel(text: "Diameter",
                                                   font: .ralewayRegular16(),
                                                   color: .specialTextF6F6F6,
@@ -39,6 +41,7 @@ class SettingsViewController: UIViewController {
     private lazy var diameterStackView = UIStackView(arrangedSubviews: [diameterLabel,
                                                                         diameterSegmentedControl])
     
+    // mass
     private let massLabel = UILabel.makeLabel(text: "Mass",
                                               font: .ralewayRegular16(),
                                               color: .specialTextF6F6F6,
@@ -47,6 +50,7 @@ class SettingsViewController: UIViewController {
     private lazy var massStackView = UIStackView(arrangedSubviews: [massLabel,
                                                                     massSegmentedControl])
     
+    // payload
     private let payloadWeightsLabel = UILabel.makeLabel(text: "Payload weights",
                                                         font: .ralewayRegular16(),
                                                         color: .specialTextF6F6F6,
@@ -84,7 +88,11 @@ class SettingsViewController: UIViewController {
         massSegmentedControl.addTarget(self, action: #selector(massSegmentedValueChanged), for: .valueChanged)
         payloadWeightsSegmentedControl.addTarget(self, action: #selector(payloadWeightsSegmentedValueChanged), for: .valueChanged)
     }
-    
+}
+
+
+// MARK: - setConstraints
+extension  SettingsViewController {
     private func setConstraints() {
         // set custom margins
         view.layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
@@ -94,13 +102,11 @@ class SettingsViewController: UIViewController {
             make.firstBaseline.equalTo(closeButton)
             make.centerX.equalToSuperview()
         }
-
         // closeButton
         closeButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(18)
             make.trailing.equalTo(view.layoutMarginsGuide)
         }
-        
         // settingsStackView
         settingsStackView.snp.makeConstraints { make in
             make.top.equalTo(closeButton).offset(75)

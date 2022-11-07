@@ -61,7 +61,11 @@ class LaunchesViewController: UIViewController {
         launchesTableView.dataSource = self
         launchesTableView.delegate = self
     }
-    
+}
+
+
+// MARK: - setConstraints
+extension LaunchesViewController {
     private func setConstraints() {
         // set custom margins
         view.layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
@@ -85,8 +89,7 @@ extension LaunchesViewController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // set padding betwen cells
         let verticalPadding: CGFloat = 16
 
@@ -94,7 +97,11 @@ extension LaunchesViewController: UITableViewDataSource {
         let maskLayer = CALayer()
         maskLayer.cornerRadius = 24
         maskLayer.backgroundColor = UIColor.black.cgColor
-        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
+        maskLayer.frame = CGRect(x: cell.bounds.origin.x,
+                                 y: cell.bounds.origin.y,
+                                 width: cell.bounds.width,
+                                 height: cell.bounds.height).insetBy(dx: 0,
+                                                                     dy: verticalPadding/2)
         cell.layer.mask = maskLayer
     }
 }

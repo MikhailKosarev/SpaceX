@@ -8,11 +8,15 @@
 import UIKit
 import SnapKit
 
+
+// MARK: - protocol RocketInfoViewDelegate
 protocol RocketInfoViewDelegate: AnyObject {
     func settingsButtonTapped()
     func showLaunchedButtonTapped()
 }
 
+
+// MARK: - RocketInfoView
 class RocketInfoView: UIView {
     
     // MARK: - Declare UI elements
@@ -117,26 +121,22 @@ extension RocketInfoView {
         settingsButton.snp.makeConstraints { make in
             make.height.equalTo(settingsButton.snp.width)
         }
-        
         // titleStackView
         titleStackView.snp.makeConstraints { make in
             make.leading.top.trailing.equalTo(layoutMarginsGuide)
         }
-        
         // rocketSizeCollectionView
         rocketSizeCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(titleStackView.snp.bottom).offset(32)
             make.height.equalTo(96)
         }
-        
         // rocketInfoTableView
         rocketInfoTableView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(layoutMarginsGuide)
             make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(16)
             make.height.equalTo(500)
         }
-        
         // showLaunchesButton
         showLaunchesButton.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(layoutMarginsGuide)

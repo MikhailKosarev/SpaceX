@@ -58,7 +58,11 @@ class LaunchesTableViewCell: UITableViewCell {
         backgroundColor = .specialBackground212121
         addSubview(launchStackView)
     }
-    
+}
+
+
+// MARK: - setConstraints
+extension LaunchesTableViewCell {
     private func setConstraints() {
         // setup margins
         contentView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
@@ -67,7 +71,6 @@ class LaunchesTableViewCell: UITableViewCell {
         launchResultImageView.snp.makeConstraints { make in
             make.width.equalTo(32)
         }
-        
         // launchStackView
         launchStackView.snp.makeConstraints { make in
             make.edges.equalTo(contentView.layoutMarginsGuide)

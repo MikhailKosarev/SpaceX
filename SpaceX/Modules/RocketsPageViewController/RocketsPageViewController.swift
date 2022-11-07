@@ -33,15 +33,10 @@ class RocketsPageViewController: UIPageViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setDelegates()
     }
     
     // MARK: - Private methods
-    private func setupView() {
-        
-    }
-    
     private func setDelegates() {
         dataSource = self
         delegate = self

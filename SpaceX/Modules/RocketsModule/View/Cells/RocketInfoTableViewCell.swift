@@ -9,7 +9,6 @@ import UIKit
 
 class RocketInfoTableViewCell: UITableViewCell {
     
-    
     // MARK: - Static properties
     static let reuseID = "RocketInfoTableViewCell"
     
@@ -42,7 +41,11 @@ class RocketInfoTableViewCell: UITableViewCell {
         backgroundColor = .black
         addSubview(infoStackView)
     }
-    
+}
+
+
+// MARK: - setConstraints
+extension RocketInfoTableViewCell {
     private func setConstraints() {
         // set contentHuggingPriority to fix ambiguous width
         valueLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
