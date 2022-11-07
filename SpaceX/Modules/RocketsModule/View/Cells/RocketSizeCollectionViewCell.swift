@@ -48,11 +48,11 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     private func setConstraints() {
         // set custom margins
         layoutMargins = UIEdgeInsets(top: 28, left: 8, bottom: 24, right: 8)
-        
-        // set constraints
+    
         // set contentHuggingPriority to fix ambiguous height
         valueLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
+        // set constraints
         sizeStackView.snp.makeConstraints { make in
             make.leading.top.trailing.bottom.equalTo(layoutMarginsGuide)
         }

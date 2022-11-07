@@ -41,6 +41,7 @@ class RocketsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         rocketInfoView.layer.cornerRadius = 32
+        
         // following appearance of scrollView when scrolled all the way to the end
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom, right: 0)
     }
@@ -67,7 +68,11 @@ class RocketsViewController: UIViewController {
     private func setDelegates() {
         rocketInfoView.delegate = self
     }
+}
 
+
+// MARK: - setConstraints
+extension RocketsViewController {
     private func setConstraints() {
         // scrollView
         scrollView.snp.makeConstraints { make in
@@ -76,7 +81,6 @@ class RocketsViewController: UIViewController {
         // contentView
         contentView.snp.makeConstraints { make in
             make.edges.width.equalTo(scrollView)
-
         }
         // rocketImageView
         rocketImageView.snp.makeConstraints { make in
@@ -103,8 +107,6 @@ extension RocketsViewController: RocketInfoViewDelegate {
     func showLaunchedButtonTapped() {
         let launchesViewController = LaunchesViewController()
         launchesViewController.modalPresentationStyle = .pageSheet
-//        present(launchesViewController, animated: true)
-        
         navigationController?.pushViewController(launchesViewController, animated: true)
     }
 }
