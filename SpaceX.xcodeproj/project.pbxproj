@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7428057D29225541005A5501 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7428057C29225541005A5501 /* Constants.swift */; };
 		7432DE712908801400C96CFE /* RocketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE702908801400C96CFE /* RocketInfoView.swift */; };
 		7432DE7329096FBB00C96CFE /* RocketSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */; };
 		7432DE762909ADF700C96CFE /* RocketInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE752909ADF700C96CFE /* RocketInfoTableViewCell.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7428057C29225541005A5501 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7432DE702908801400C96CFE /* RocketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoView.swift; sourceTree = "<group>"; };
 		7432DE7229096FBB00C96CFE /* RocketSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7432DE752909ADF700C96CFE /* RocketInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7428057B2922552A005A5501 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7428057C29225541005A5501 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		7432DE7429096FCA00C96CFE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 				7487B2BA2906CA7D00066FEA /* App */,
 				7487B2BC2906CAA700066FEA /* Modules */,
 				7487B2C92906CD0700066FEA /* Services */,
+				7428057B2922552A005A5501 /* Constants */,
 				7487B2CA2906CD1600066FEA /* Extensions */,
 				7487B2BB2906CA8700066FEA /* Resources */,
 			);
@@ -388,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D83C292911BAF700471BE2 /* RocketsPageViewController.swift in Sources */,
+				7428057D29225541005A5501 /* Constants.swift in Sources */,
 				74AD3CEB290AAEBC00785CF0 /* UIFont + Extension.swift in Sources */,
 				74AD3CEF290DB58800785CF0 /* UILabel + Extensions.swift in Sources */,
 				7482751B290F0E4F00857B53 /* LaunchesTableViewCell.swift in Sources */,

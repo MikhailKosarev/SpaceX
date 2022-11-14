@@ -42,7 +42,7 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     private func setupView() {
         backgroundColor = .specialBackground212121
         addSubview(sizeStackView)
-        layer.cornerRadius = 32
+        layer.cornerRadius = Constants.cornerRadius32
     }
     
     private func setConstraints() {

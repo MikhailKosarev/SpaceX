@@ -95,7 +95,7 @@ extension LaunchesViewController: UITableViewDataSource {
 
         // setup padding and cornerRadius
         let maskLayer = CALayer()
-        maskLayer.cornerRadius = 24
+        maskLayer.cornerRadius = Constants.cornerRadius24
         maskLayer.backgroundColor = UIColor.black.cgColor
         maskLayer.frame = CGRect(x: cell.bounds.origin.x,
                                  y: cell.bounds.origin.y,

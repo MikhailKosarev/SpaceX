@@ -65,7 +65,7 @@ class RocketInfoView: UIView {
         button.setTitleColor(.specialTextF6F6F6, for: .normal)
         button.titleLabel?.font = .ralewaySemiBold16()
         button.backgroundColor = .specialBackground212121
-        button.layer.cornerRadius = 16
+        button.layer.cornerRadius = Constants.cornerRadius16
         button.addTarget(self, action: #selector(showLaunchedButtonTapped), for: .touchUpInside)
         return button
     }()

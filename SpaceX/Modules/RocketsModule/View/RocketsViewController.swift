@@ -40,7 +40,7 @@ class RocketsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        rocketInfoView.layer.cornerRadius = 32
+        rocketInfoView.layer.cornerRadius = Constants.cornerRadius32
         
         // following appearance of scrollView when scrolled all the way to the end
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom, right: 0)
