@@ -41,5 +41,15 @@ enum Constants {
     // width
     static let width32: CGFloat = 32.0
     static let width96: CGFloat = 96.0
+    
+    // paddings
+    static let padding16: CGFloat = 16.0
+    
+    // spacings
+    static let spacing12: CGFloat = 12.0
+    static let spacing24: CGFloat = 24.0
+    
+    // font size
+    static let size16: CGFloat = 16.0
 }
 

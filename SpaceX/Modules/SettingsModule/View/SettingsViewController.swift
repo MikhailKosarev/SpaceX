@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController {
                                                                         massStackView,
                                                                         payloadWeightsStackView],
                                                      axis: .vertical,
-                                                     spacing: 24.0)
+                                                     spacing: Constants.spacing24)
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -83,10 +83,18 @@ class SettingsViewController: UIViewController {
     }
     
     private func addtargets() {
-        heightSegmentedControl.addTarget(self, action: #selector(heightSegmentedValueChanged), for: .valueChanged)
-        diameterSegmentedControl.addTarget(self, action: #selector(diameterSegmentedValueChanged), for: .valueChanged)
-        massSegmentedControl.addTarget(self, action: #selector(massSegmentedValueChanged), for: .valueChanged)
-        payloadWeightsSegmentedControl.addTarget(self, action: #selector(payloadWeightsSegmentedValueChanged), for: .valueChanged)
+        heightSegmentedControl.addTarget(self,
+                                         action: #selector(heightSegmentedValueChanged),
+                                         for: .valueChanged)
+        diameterSegmentedControl.addTarget(self,
+                                           action: #selector(diameterSegmentedValueChanged),
+                                           for: .valueChanged)
+        massSegmentedControl.addTarget(self,
+                                       action: #selector(massSegmentedValueChanged),
+                                       for: .valueChanged)
+        payloadWeightsSegmentedControl.addTarget(self,
+                                                 action: #selector(payloadWeightsSegmentedValueChanged),
+                                                 for: .valueChanged)
     }
 }
 

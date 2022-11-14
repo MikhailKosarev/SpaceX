@@ -39,7 +39,7 @@ class RocketInfoView: UIView {
         //setup flow
         let flow = UICollectionViewFlowLayout()
         flow.scrollDirection = .horizontal
-        flow.minimumInteritemSpacing = 12
+        flow.minimumInteritemSpacing = Constants.spacing12
         flow.itemSize = CGSize(width: Constants.width96, height: Constants.height96)
         
         // setup collectionView

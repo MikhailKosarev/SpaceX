@@ -47,7 +47,7 @@ class LaunchesViewController: UIViewController {
         appearance.shadowColor = .clear
                 
         // setup navigation bar title appearance
-        appearance.titleTextAttributes = [.font: UIFont.ralewayRegular16() ?? UIFont.systemFont(ofSize: 16),
+        appearance.titleTextAttributes = [.font: UIFont.ralewayRegular16() ?? UIFont.systemFont(ofSize: Constants.size16),
                                           .foregroundColor: UIColor.specialTextF6F6F6]
 
         navigationController?.navigationBar.standardAppearance = appearance
@@ -94,7 +94,7 @@ extension LaunchesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // set padding betwen cells
-        let verticalPadding: CGFloat = 16
+        let verticalPadding: CGFloat = Constants.padding16
 
         // setup padding and cornerRadius
         let maskLayer = CALayer()
