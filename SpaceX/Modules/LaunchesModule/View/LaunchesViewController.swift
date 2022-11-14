@@ -68,7 +68,10 @@ class LaunchesViewController: UIViewController {
 extension LaunchesViewController {
     private func setConstraints() {
         // set custom margins
-        view.layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
+        view.layoutMargins = UIEdgeInsets(top: Constants.inset48,
+                                          left: Constants.inset32,
+                                          bottom: Constants.inset0,
+                                          right: Constants.inset32)
         
         // launchesTableView
         launchesTableView.snp.makeConstraints { make in

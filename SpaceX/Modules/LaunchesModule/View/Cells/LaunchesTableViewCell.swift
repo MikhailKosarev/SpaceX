@@ -65,7 +65,10 @@ class LaunchesTableViewCell: UITableViewCell {
 extension LaunchesTableViewCell {
     private func setConstraints() {
         // setup margins
-        contentView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+        contentView.layoutMargins = UIEdgeInsets(top: Constants.inset24,
+                                                 left: Constants.inset24,
+                                                 bottom: Constants.inset24,
+                                                 right: Constants.inset24)
         
         // launchResultImageView
         launchResultImageView.snp.makeConstraints { make in

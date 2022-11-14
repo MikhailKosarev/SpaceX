@@ -95,7 +95,10 @@ class SettingsViewController: UIViewController {
 extension  SettingsViewController {
     private func setConstraints() {
         // set custom margins
-        view.layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
+        view.layoutMargins = UIEdgeInsets(top: Constants.inset48,
+                                          left: Constants.inset32,
+                                          bottom: Constants.inset0,
+                                          right: Constants.inset32)
         
         // titleLabel
         titleLabel.snp.makeConstraints { make in
@@ -104,12 +107,12 @@ extension  SettingsViewController {
         }
         // closeButton
         closeButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(18)
+            make.top.equalToSuperview().offset(Constants.offset18)
             make.trailing.equalTo(view.layoutMarginsGuide)
         }
         // settingsStackView
         settingsStackView.snp.makeConstraints { make in
-            make.top.equalTo(closeButton).offset(75)
+            make.top.equalTo(closeButton).offset(Constants.offset75)
             make.leading.trailing.equalTo(view.layoutMarginsGuide)
         }
     }

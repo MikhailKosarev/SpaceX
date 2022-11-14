@@ -14,5 +14,20 @@ enum Constants {
     static let cornerRadius24: CGFloat = 24.0
     static let cornerRadius32: CGFloat = 32.0
     
+    // insets
+    static let inset0: CGFloat = 0.0
+    static let inset8: CGFloat = 8.0
+    static let inset24: CGFloat = 24.0
+    static let inset28: CGFloat = 28.0
+    static let inset32: CGFloat = 32.0
+    static let inset48: CGFloat = 48.0
+    
+    // offsets
+    static let offset16: CGFloat = 16.0
+    static let offset18: CGFloat = 18.0
+    static let offset32: CGFloat = 32.0
+    static let offset40: CGFloat = 40.0
+    static let offset75: CGFloat = 75.0
+    static let offset250: CGFloat = 250.0
 }
 
