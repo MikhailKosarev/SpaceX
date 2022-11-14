@@ -113,7 +113,7 @@ extension LaunchesViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension LaunchesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        116
+        Constants.height116
     }
 }
 

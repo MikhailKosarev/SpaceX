@@ -72,7 +72,7 @@ extension LaunchesTableViewCell {
         
         // launchResultImageView
         launchResultImageView.snp.makeConstraints { make in
-            make.width.equalTo(32)
+            make.width.equalTo(Constants.width32)
         }
         // launchStackView
         launchStackView.snp.makeConstraints { make in

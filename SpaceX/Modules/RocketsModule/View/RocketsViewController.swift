@@ -88,7 +88,7 @@ extension RocketsViewController {
         // rocketImageView
         rocketImageView.snp.makeConstraints { make in
             make.leading.top.trailing.equalTo(contentView)
-            make.height.equalTo(300)
+            make.height.equalTo(Constants.height300)
         }
         // rocketInfoView
         rocketInfoView.snp.makeConstraints { make in

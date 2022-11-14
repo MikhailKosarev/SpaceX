@@ -29,5 +29,17 @@ enum Constants {
     static let offset40: CGFloat = 40.0
     static let offset75: CGFloat = 75.0
     static let offset250: CGFloat = 250.0
+    
+    // height
+    static let height40: CGFloat = 40.0
+    static let height48: CGFloat = 48.0
+    static let height96: CGFloat = 96.0
+    static let height116: CGFloat = 116.0
+    static let height300: CGFloat = 300.0
+    static let height500: CGFloat = 500.0
+    
+    // width
+    static let width32: CGFloat = 32.0
+    static let width96: CGFloat = 96.0
 }
 
