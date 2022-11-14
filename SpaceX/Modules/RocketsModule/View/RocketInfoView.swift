@@ -39,12 +39,15 @@ class RocketInfoView: UIView {
         //setup flow
         let flow = UICollectionViewFlowLayout()
         flow.scrollDirection = .horizontal
-        flow.minimumInteritemSpacing = 12
-        flow.itemSize = CGSize(width: 96, height: 96)
+        flow.minimumInteritemSpacing = Constants.spacing12
+        flow.itemSize = CGSize(width: Constants.width96, height: Constants.height96)
         
         // setup collectionView
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
-        collectionView.contentInset = .init(top: 0, left: 32, bottom: 0, right: 32)
+        collectionView.contentInset = .init(top: Constants.inset0,
+                                            left: Constants.inset32,
+                                            bottom: Constants.inset0,
+                                            right: Constants.inset32)
         collectionView.backgroundColor = .none
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -65,7 +68,7 @@ class RocketInfoView: UIView {
         button.setTitleColor(.specialTextF6F6F6, for: .normal)
         button.titleLabel?.font = .ralewaySemiBold16()
         button.backgroundColor = .specialBackground212121
-        button.layer.cornerRadius = 16
+        button.layer.cornerRadius = Constants.cornerRadius16
         button.addTarget(self, action: #selector(showLaunchedButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -115,7 +118,10 @@ class RocketInfoView: UIView {
 extension RocketInfoView {
     private func setConstraints() {
         // set custom margins
-        layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
+        layoutMargins = UIEdgeInsets(top: Constants.inset48,
+                                     left: Constants.inset32,
+                                     bottom: Constants.inset0,
+                                     right: Constants.inset32)
         
         // settingsButton
         settingsButton.snp.makeConstraints { make in
@@ -128,20 +134,20 @@ extension RocketInfoView {
         // rocketSizeCollectionView
         rocketSizeCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(titleStackView.snp.bottom).offset(32)
-            make.height.equalTo(96)
+            make.top.equalTo(titleStackView.snp.bottom).offset(Constants.offset32)
+            make.height.equalTo(Constants.height96)
         }
         // rocketInfoTableView
         rocketInfoTableView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(layoutMarginsGuide)
-            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(16)
-            make.height.equalTo(500)
+            make.top.equalTo(rocketSizeCollectionView.snp.bottom).offset(Constants.offset16)
+            make.height.equalTo(Constants.height500)
         }
         // showLaunchesButton
         showLaunchesButton.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(layoutMarginsGuide)
-            make.top.equalTo(rocketInfoTableView.snp.bottom).offset(40)
-            make.height.equalTo(48)
+            make.top.equalTo(rocketInfoTableView.snp.bottom).offset(Constants.offset40)
+            make.height.equalTo(Constants.height48)
         }
     }
 }
@@ -205,12 +211,12 @@ extension RocketInfoView: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension RocketInfoView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        40
+        Constants.height40
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section > 0 {
-            return 40
+            return Constants.height40
         } else {
             return 0
         }

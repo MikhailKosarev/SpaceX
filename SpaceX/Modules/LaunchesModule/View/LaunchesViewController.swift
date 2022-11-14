@@ -47,7 +47,7 @@ class LaunchesViewController: UIViewController {
         appearance.shadowColor = .clear
                 
         // setup navigation bar title appearance
-        appearance.titleTextAttributes = [.font: UIFont.ralewayRegular16() ?? UIFont.systemFont(ofSize: 16),
+        appearance.titleTextAttributes = [.font: UIFont.ralewayRegular16() ?? UIFont.systemFont(ofSize: Constants.size16),
                                           .foregroundColor: UIColor.specialTextF6F6F6]
 
         navigationController?.navigationBar.standardAppearance = appearance
@@ -68,7 +68,10 @@ class LaunchesViewController: UIViewController {
 extension LaunchesViewController {
     private func setConstraints() {
         // set custom margins
-        view.layoutMargins = UIEdgeInsets(top: 48, left: 32, bottom: 0, right: 32)
+        view.layoutMargins = UIEdgeInsets(top: Constants.inset48,
+                                          left: Constants.inset32,
+                                          bottom: Constants.inset0,
+                                          right: Constants.inset32)
         
         // launchesTableView
         launchesTableView.snp.makeConstraints { make in
@@ -91,11 +94,11 @@ extension LaunchesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // set padding betwen cells
-        let verticalPadding: CGFloat = 16
+        let verticalPadding: CGFloat = Constants.padding16
 
         // setup padding and cornerRadius
         let maskLayer = CALayer()
-        maskLayer.cornerRadius = 24
+        maskLayer.cornerRadius = Constants.cornerRadius24
         maskLayer.backgroundColor = UIColor.black.cgColor
         maskLayer.frame = CGRect(x: cell.bounds.origin.x,
                                  y: cell.bounds.origin.y,
@@ -110,7 +113,7 @@ extension LaunchesViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension LaunchesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        116
+        Constants.height116
     }
 }
 

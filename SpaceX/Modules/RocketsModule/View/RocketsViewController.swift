@@ -40,10 +40,13 @@ class RocketsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        rocketInfoView.layer.cornerRadius = 32
+        rocketInfoView.layer.cornerRadius = Constants.cornerRadius32
         
         // following appearance of scrollView when scrolled all the way to the end
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: Constants.inset0,
+                                               left: Constants.inset0,
+                                               bottom: view.safeAreaInsets.bottom,
+                                               right: Constants.inset0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -85,12 +88,12 @@ extension RocketsViewController {
         // rocketImageView
         rocketImageView.snp.makeConstraints { make in
             make.leading.top.trailing.equalTo(contentView)
-            make.height.equalTo(300)
+            make.height.equalTo(Constants.height300)
         }
         // rocketInfoView
         rocketInfoView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(contentView)
-            make.top.equalTo(scrollView).offset(250)
+            make.top.equalTo(scrollView).offset(Constants.offset250)
         }
     }
 }

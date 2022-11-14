@@ -42,12 +42,15 @@ class RocketSizeCollectionViewCell: UICollectionViewCell {
     private func setupView() {
         backgroundColor = .specialBackground212121
         addSubview(sizeStackView)
-        layer.cornerRadius = 32
+        layer.cornerRadius = Constants.cornerRadius32
     }
     
     private func setConstraints() {
         // set custom margins
-        layoutMargins = UIEdgeInsets(top: 28, left: 8, bottom: 24, right: 8)
+        layoutMargins = UIEdgeInsets(top: Constants.inset28,
+                                     left: Constants.inset8,
+                                     bottom: Constants.inset24,
+                                     right: Constants.inset8)
     
         // set contentHuggingPriority to fix ambiguous height
         valueLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
